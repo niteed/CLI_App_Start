@@ -11,3 +11,19 @@ if (age >= 25){
 else {
   console.log("Sorry the minimum age requirement is 25")
 }
+
+var readlineSync = require('readline-sync')
+function add(a,b){
+c = a+b ;
+return c ;
+}
+//a =readlineSync.question("Enter first no : ");
+//b =readlineSync.question("Enter second no : ");
+//readline consider nos as strings and concat them
+add(25,30);
+
+function prod(a,b){
+c = a*b ;
+return c ;
+}
+prod(45,12)
