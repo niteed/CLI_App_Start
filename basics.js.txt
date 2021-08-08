@@ -1,0 +1,13 @@
+// console.log("text to display")
+// prompt("name :")
+var readlineSync = require('readline-sync')
+var name = readlineSync.question("May I know ur name? : ")
+var welcome_message = "Welcome !"
+console.log(welcome_message + name)
+var age= readlineSync.question("What is your age ? ")
+if (age >= 25){
+  console.log("You are Eligible. Welcome to the group")
+}
+else {
+  console.log("Sorry the minimum age requirement is 25")
+}
