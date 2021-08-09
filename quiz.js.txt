@@ -1,0 +1,68 @@
+var readlineSync = require('readline-sync')
+var name = readlineSync.question("May I know ur name? : ")
+var welcome_message = "Welcome !"
+console.log(welcome_message + name)
+var age= readlineSync.question("What is your age ? ")
+if (age >= 18){
+  console.log("You are Eligible for the Quiz. Let's Play ")
+}
+else {
+  console.log("Sorry the minimum age requirement is 18")
+}
+console.log("************** NETFLIX QUIZ 2021 **************\nRules:Enter the correct option choice or answer  \n\n ")
+
+var score = 0;
+
+var questions = [{
+  question :"Which one of the following series WAS NOT part of the first Netflix original series programming:\nA) House of Cards \nB) Sons of Anarchy \nC) Hemlock Grove \nD) Arrested Development \nE) Orange Is The New Black \nEnter your choice : " ,
+  answer :"B" },
+  
+  {question :"What was Netflix originally called? \nA) Fibble \nB) Kibble \nC) Mibble \nEnter your choice : " ,
+  answer :"B" },
+
+  {question :"The current Netflix 'N' logo consists of... \nA) More than one shade of red \nB) One shade of red \nEnter your choice : " ,
+  answer :"A" },
+
+  {question :"Who plays Pablo Escobar in Narcos? \nA - Diego Luna \nB - Pedro Pascal \nC - Giancarlo Esposito \nD - Wagner Moura \nEnter your choice : " ,
+  answer :"D" },
+
+  {question :" What is the name of the fictional town where Stranger Things is set? \nA - Hawkins \nB - Chatswin \nC - Happiness \nD - Eerie \nEnter your choice : " ,
+  answer :"A" },
+
+  {question :"What is the other dimension in Stranger Things called? \nA - The down under \nB - The back to front \nC - The upside down \nD - The inside out \nEnter your choice : " ,
+  answer :"C" },
+
+  {question :"Who created Black Mirror? \nA - David Lynch \nB - Ricky Gervais \nC - Charlie Brooker \nD - Vince Gilligan \nEnter your choice : " ,
+  answer :"C" },
+
+  {question :"Riverdale is based on which famous comics? \nA - Harris \nB - Harvey \nC - Charlton \nD - Archie \nEnter your choice : " ,
+  answer :"D" },
+
+  {question :"Where do Clay and Hannah work together in 13 Reasons Why? \nA - The Clubhouse \nB - The Crestmont \nC - Monet’s \nD - Blue Spot Liquor \nEnter your choice : " ,
+  answer :"B" },
+
+  {question :"Who won an Academy Award for their role in Marriage Story? \nA - Adam Driver \nB - Scarlett Johansson \nC - Laura Dern \nD - Ray Liotta \nEnter your choice : " ,
+  answer :"C" 
+  }]
+
+
+for (var i=0;i<questions.length;i++)
+{
+  var cr_question = questions[i];
+  play(cr_question.question,cr_question.answer)
+}
+
+function play(question,answer){
+  var userAnswer = readlineSync.question("\n\n"+question);
+  if(userAnswer==answer){
+    console.log("That's correct ! Right ");
+    score = score + 1;
+    console.log(score)
+  }
+  else{
+    console.log("Sorry that's Incorrect ! Better luck next time ");
+    console.log(score)
+  }  
+}
+console.log("Your score : "+score+" / 10 \n************** QUIZ COMPLETED **************")
+
